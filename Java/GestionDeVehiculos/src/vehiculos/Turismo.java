@@ -1,14 +1,38 @@
 package vehiculos;
 
-public class Turismo extends Vehiculo{
+public class Turismo extends Vehiculos{
 	private double capacidadMaletero;
 	private int numPuertas;
-	//inicializar atributos
-	public Turismo(String numeroVehiculos, String matricula, String numBastidor, String color, String[] serie,
-			double precio, int numAsientos) {
-		super(numeroVehiculos, matricula, numBastidor, color, serie, precio, numAsientos);
+	
+	
+	public Turismo() {
 		
 	}
+	
+	@Override
+	void cargaVehiculo() {
+		super.cargaVehiculo();
+		
+		System.out.println("Introduzca la capacidad del maletero:");
+		capacidadMaletero = Console.readDouble();
+		System.out.println("Introduzca el numero de puertas:");
+		numPuertas = Console.readInt();
+		
+		
+		contadorVehiculo();
+	}
+	
+	void comprarTurismo() {
+		
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString()+"Capacidad del maletero: "+capacidadMaletero
+				+"Numero de puertas: "+numPuertas;
+	}
+	
+	
 	
 	
 }
