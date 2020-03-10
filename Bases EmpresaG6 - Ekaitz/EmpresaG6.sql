@@ -43,6 +43,19 @@ Modelo VARCHAR(15),
 Año_Fabricación INTEGER(4)
 );
 
+CREATE TABLE Historial(
+Codigo INTEGER(10) AUTO_INCREMENT PRIMARY KEY,
+Matricula VARCHAR(10) NOT NULL,
+Fecha_Compra DATE NOT NULL,
+Fecha_Venta DATE NOT NULL,
+num_Bastidor VARCHAR(20),
+color VARCHAR(10) NOT NULL,
+num_Asientos INTEGER(2),
+precio DOUBLE,
+serie VARCHAR(10) NOT NULL,
+Tipo_Vechiculo VARCHAR(6)
+);
+
 -- INSERTS DE UN VEHICULO
 
 INSERT INTO Vehiculos VALUES("234 FDA","2020-06-03","V23P52E93","Rojo","2","380000","LAMB0001","Coche");
