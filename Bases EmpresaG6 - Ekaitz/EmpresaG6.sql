@@ -56,11 +56,15 @@ serie VARCHAR(10) NOT NULL,
 Tipo_Vechiculo VARCHAR(6)
 );
 
--- INSERTS DE UN VEHICULO
+-- PROCESO QUE SEGUIRÁ UN VEHICULO
+-- Registro:
 
 INSERT INTO Vehiculos VALUES("234 FDA","2020-06-03","V23P52E93","Rojo","2","380000","LAMB0001","Coche");
 INSERT INTO Coches VALUES("234 FDA","2","240");
 INSERT INTO Series VALUES("LAMB0001","Lamborghini","Aventador","2014");
+-- Se cambia el color:
+
+CALL CambioColor();
 
 -- 	LLAMANDO AL PROCESO ALMACENADO
 -- realiza una consulta sobre el color del coche indicado
