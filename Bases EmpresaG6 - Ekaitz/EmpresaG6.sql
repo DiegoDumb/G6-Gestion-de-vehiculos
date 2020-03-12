@@ -56,6 +56,15 @@ serie VARCHAR(10) NOT NULL,
 Tipo_Vechiculo VARCHAR(6)
 );
 
+-- TRIGGERS
+
+drop trigger if exists RellenarHistorial;
+create trigger RellenarHistorial
+AFTER INSERT ON Vehiculos for each row
+insert into Historial(Matricula, Fecha_compra, num_Bastidor, color, num_Asientos, precio, serie, Tipo_vehiculo)
+values (new.Matricula, new.Fecha_compra, new.num_Bastidor, new.color, new.num_Asientos, new.precio, new.serie, new.Tipo_vehiculo);
+
+
 -- PROCESO QUE SEGUIRÁ UN VEHICULO
 -- Registro:
 
