@@ -4,7 +4,6 @@ USE EmpresaG6;
 
 CREATE TABLE Vehiculos(
 Matricula VARCHAR(10) NOT NULL PRIMARY KEY,
-Fecha_Compra DATE NOT NULL,
 num_Bastidor VARCHAR(20),
 color VARCHAR(10) NOT NULL,
 num_Asientos INTEGER(2),
@@ -29,16 +28,6 @@ FOREIGN KEY (Matricula) REFERENCES Vehiculos(Matricula)
 ON DELETE CASCADE
 );
 
-CREATE TABLE Ventas(
-DNI VARCHAR(10) NOT NULL PRIMARY KEY,
-Fecha_venta DATE,
-Matricula_Vehiculo_Vendido VARCHAR(10) NOT NULL,
-Nombre VARCHAR(15),
-TLFContacto INTEGER(9),
-Correo VARCHAR(30),
-FOREIGN KEY (Matricula_Vehiculo_Vendido) REFERENCES Vehiculos(Matricula)
-);
-
 CREATE TABLE Series(
 Nombre_Serie VARCHAR(15) PRIMARY KEY,
 Marca VARCHAR(15),
@@ -48,13 +37,13 @@ Año_Fabricación INTEGER(4)
 
 CREATE TABLE Historial(
 Codigo INTEGER(4) AUTO_INCREMENT NOT NULL PRIMARY KEY,
+Fecha DATE,
 Matricula VARCHAR(10) NOT NULL,
-Fecha_Compra DATE NOT NULL,
-Fecha_Venta DATE,
 num_Bastidor VARCHAR(20),
 color VARCHAR(10) NOT NULL,
 num_Asientos INTEGER(2),
 precio DOUBLE,
 serie VARCHAR(10) NOT NULL,
-Tipo_Vehiculo VARCHAR(6)
+Tipo_Vehiculo VARCHAR(6),
+Descripción VARCHAR(10)
 );
