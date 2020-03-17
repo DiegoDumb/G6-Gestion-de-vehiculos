@@ -1,0 +1,6 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultaColor`()
+BEGIN
+SELECT *
+FROM vehiculos
+WHERE color = "rojo";
+END
