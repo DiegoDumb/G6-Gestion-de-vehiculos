@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `CambiaColor`()
+BEGIN
+UPDATE Vehiculos SET color = "morado" WHERE Matricula = "234 FDA";
+END
