@@ -12,5 +12,11 @@ INSERT INTO Series VALUES("CAMI0101","MAN","TGX D38","2017");
 UPDATE Vehiculos SET color = "morado" WHERE Matricula = "234 FDA";
 
 -- VENDEMOS COCHE
-
 DELETE FROM Vehiculos WHERE matricula = "234 FDA";
+
+-- CONSULTAS
+
+-- CONSULTA COCHE CON FILTROS COLOR/NUM PUERTAS
+SELECT vehiculos.matricula, vehiculos.precio, series.marca, series.modelo
+FROM vehiculos, coches, series
+WHERE series.Nombre_Serie = vehiculos.serie AND color = "rojo" AND num_puertas = 2;
