@@ -20,3 +20,9 @@ DELETE FROM Vehiculos WHERE matricula = "234 FDA";
 SELECT vehiculos.matricula, vehiculos.precio, series.marca, series.modelo
 FROM vehiculos, coches, series
 WHERE series.Nombre_Serie = vehiculos.serie AND color = "rojo" AND num_puertas = 2;
+
+-- CONSULTA CAMION CON FILTROS CARGA/TIPO MERCANCIA
+SELECT vehiculos.matricula, vehiculos.precio, series.marca, series.modelo
+FROM vehiculos, camiones, series
+WHERE vehiculos.matricula = camiones.matricula AND camiones.carga_kg = "4600" AND camiones.tipo_Mercancia = "T"
+GROUP BY vehiculos.matricula and series.Nombre_Serie;
