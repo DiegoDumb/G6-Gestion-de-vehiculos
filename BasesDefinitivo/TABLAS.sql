@@ -4,45 +4,45 @@ USE EmpresaG6;
 
 CREATE TABLE Vehiculos(
 Matricula VARCHAR(10) NOT NULL PRIMARY KEY,
-num_Bastidor VARCHAR(20),
+num_Bastidor VARCHAR(20) NOT NULL,
 color VARCHAR(10) NOT NULL,
-num_Asientos INTEGER(2),
-precio DOUBLE,
+num_Asientos INTEGER(2) NOT NULL,
+precio DOUBLE NOT NULL,
 serie VARCHAR(10) NOT NULL,
-Tipo_Vehiculo VARCHAR(6)
+Tipo_Vehiculo VARCHAR(6) NOT NULL
 );
 
 CREATE TABLE Coches(
 Matricula VARCHAR(10) NOT NULL PRIMARY KEY,
-num_Puertas INTEGER(1),
-capacidad_Maletero_dm3 INTEGER(3),
+num_Puertas INTEGER(1) NOT NULL,
+capacidad_Maletero_dm3 DOUBLE NOT NULL,
 FOREIGN KEY (Matricula) REFERENCES Vehiculos(Matricula)
 ON DELETE CASCADE
 );
 
 CREATE TABLE Camiones(
 Matricula VARCHAR(10) NOT NULL PRIMARY KEY,
-carga_kg INTEGER(5),
+carga_kg DOUBLE NOT NULL,
 tipo_Mercancia VARCHAR(1) NOT NULL,
 FOREIGN KEY (Matricula) REFERENCES Vehiculos(Matricula)
 ON DELETE CASCADE
 );
 
 CREATE TABLE Series(
-Nombre_Serie VARCHAR(15) PRIMARY KEY,
-Marca VARCHAR(15),
-Modelo VARCHAR(15),
-Año_Fabricación INTEGER(4)
+Nombre_Serie VARCHAR(15) PRIMARY KEY NOT NULL,
+Marca VARCHAR(15) NOT NULL,
+Modelo VARCHAR(15) NOT NULL,
+Anio_Fabricacion INTEGER(4) NOT NULL
 );
 
 CREATE TABLE Historial(
 Fecha DATETIME NOT NULL PRIMARY KEY,
 Matricula VARCHAR(10) NOT NULL,
-num_Bastidor VARCHAR(20),
+num_Bastidor VARCHAR(20) NOT NULL,
 color VARCHAR(10) NOT NULL,
-num_Asientos INTEGER(2),
-precio DOUBLE,
+num_Asientos INTEGER(2) NOT NULL,
+precio DOUBLE NOT NULL,
 serie VARCHAR(10) NOT NULL,
-Tipo_Vehiculo VARCHAR(6),
-Descripción VARCHAR(25)
+Tipo_Vehiculo VARCHAR(6) NOT NULL,
+Descripcion VARCHAR(25) NOT NULL
 );
